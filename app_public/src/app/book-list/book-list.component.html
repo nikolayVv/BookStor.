@@ -1,0 +1,54 @@
+<div *ngIf="books.length">
+  <div id="bookList"
+       class="mb-auto row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-3">
+    <div *ngFor="let book of books">
+      <div class="col mb-5 book">
+        <div class="card h-100">
+          <img class="card-img-top slika" src="{{book.pictures[0]}}" alt="book photo" height="250"/>
+          <div class="card-body p-4">
+            <div class="text-center">
+              <h6 class="fw-bolder">{{book.title | fixLength: 32}}</h6>
+              <div [innerHTML]="book | showPrice"></div>
+              <h2 class="visually-hidden">{{book.timesRented}}</h2>
+              <h1 class="visually-hidden">{{book.created}}</h1>
+              <p class="visually-hidden">{{book.genres}}</p>
+            </div>
+          </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent row">
+            <div class="text-center col" *ngIf="page == 'contents'; else myBooks"><a
+              class="btn btn-light btn-outline-dark mt-auto {{!jePovezava() ? 'disabled' : ''}}"
+              href="/books/bookDetails/{{book._id}}">Show more...</a></div>
+            <div *ngIf="loggedAdmin && page == 'contents'" class="text-center col">
+              <button type="submit" class="btn bg-danger btn-outline-dark mt-auto" [disabled]="!jePovezava()"
+                      (click)="deleteBook(book)">Delete
+              </button>
+            </div>
+            <ng-template #myBooks>
+              <div class="text-center col"><a
+                class="btn btn-light btn-outline-dark mt-auto {{!jePovezava() ? 'disabled' : ''}}"
+                href="/books/editBook/{{book._id}}">Edit</a></div>
+              <div class="text-center col"><a
+                class="btn btn-danger btn-outline-dark mt-auto {{!jePovezava() ? 'disabled' : ''}}"
+                (click)="deleteBook(book)">Delete</a></div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="jePovezava()">
+    <app-pagination *ngIf="allBooks >= 7" [allBooks]="allBooks"
+                    (onPageChange)="displayActivePage($event)"></app-pagination>
+  </div>
+</div>
+<div *ngIf="!books.length" class="h-100">
+  <div class="col mb-5 h-100">
+    <div class="card h-100 align-items-center">
+      <div class="card-body p-4 align-items-center row justify-content-center align-self-center">
+        <div class="text-center">
+          <h1 class="text-secondary">There are not any books in the database yet!</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

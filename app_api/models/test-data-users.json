@@ -1,0 +1,217 @@
+[
+    {
+        "name": "Johnny",
+        "surname": "Andrews",
+        "email": "johnny_a@gmail.com",
+        "username": "johnnyAndr",
+        "password": "1234",
+        "country": "United States",
+        "city": "Hartford",
+        "address": "1944 Lochmere Lane",
+        "phone": "(860) 375-1478",
+        "successfulSales": 3,
+        "activeSales": 1,
+        "joined": "2020-12-23",
+        "profilePhoto": "img1",
+        "role": "admin",
+        "ranking": 5.3,
+        "alreadyRanked": [
+            {
+                "name": "Laura",
+                "rank": 3
+            },
+            {
+                "name": "zuck",
+                "rank": 1
+            }
+        ],
+        "comments": [
+            {
+                "profilePhoto": "img1Comments1",
+                "name": "Claus",
+                "surname": "Rimmus",
+                "email": "c_rim@gmail.com",
+                "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?",
+                "created": "12 April, 2021"
+            },
+            {
+                "profilePhoto": "img2Comments1",
+                "name": "Karen",
+                "surname": "Kardashian",
+                "email": "kK_shian@gmail.com",
+                "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias doloremque molestiae dicta?",
+                "created": "04 May, 2021"
+            },
+            {
+                "profilePhoto": "img3Comments1",
+                "name": "Chloe",
+                "surname": "Rice",
+                "email": "chl_rice@gmail.com",
+                "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic molestiae dicta?",
+                "created": "23 September, 2021"
+            }
+        ],
+        "myBooks": [
+            {
+                "title": "Kinda Good Comic Book",
+                "author": "Cool Guys Who Draws",
+                "bookReleaseYear": 1968,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper.",
+                "genre": ["Comic Books", "Fantasy"],
+                "condition": "Used",
+                "buy": true,
+                "rent": true,
+                "buyPrice": 23.1,
+                "rentPrice": 3.3,
+                "location": "United States, Hartford",
+                "phone": "(860) 375-1478",
+                "pictures": ["img1", "img2"],
+                "timesGivenForRent": 1,
+                "seller": "Johnny Andrews"
+            }
+        ]
+    },
+    {
+        "name": "Andrew",
+        "surname": "Smith",
+        "email": "aNdReWsh@gmail.com",
+        "username": "IamAndrew_S",
+        "password": "5678",
+        "country": "United States",
+        "city": "New York",
+        "address": "1523 Morningview Lane",
+        "phone": "(646) 209-1533",
+        "successfulSales": 2,
+        "activeSales": 0,
+        "joined": "2021-02-12",
+        "profilePhoto": "img2",
+        "role": "user",
+        "ranking": 2.1,
+        "alreadyRanked": [
+            {
+                "name": "Laura",
+                "rank": 3
+            },
+            {
+                "name": "zuck",
+                "rank": 1
+            }
+        ],
+        "comments": [
+            {
+                "profilePhoto": "img1Comments2",
+                "name": "Rikky",
+                "surname": "Hopes",
+                "email": "rR_Hopes@gmail.com",
+                "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta? Lorem ipsum dolor sit, amet consectetur adipisicing... Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta? Lorem ipsum dolor sit, amet consectetur adipisicing elit!",
+                "created": "25 October, 2021"
+            },
+            {
+                "profilePhoto": "img2Comments2",
+                "name": "Antoan",
+                "surname": "Jones",
+                "email": "aJ2313@gmail.com",
+                "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam vero sequi velit molestias doloremque molestiae dicta? Lorem ipsum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus molestias doloremque molestiae dicta? Lorem ipsum dolor sit, amet consectetur adipisicing elit!",
+                "created": "30 October, 2021"
+            }
+        ],
+        "myBooks": null
+    },
+    {
+        "name": "Greta",
+        "surname": "Schmuck",
+        "email": "Greta_sS@gmail.com",
+        "username": "GretaLovesGerman123",
+        "password": "9012",
+        "country": "Germany",
+        "city": "Lubeck",
+        "address": "Rudower Chaussee 74",
+        "phone": "(018) 0540-0640",
+        "successfulSales": 10,
+        "activeSales": 6,
+        "joined": "2019-11-26",
+        "profilePhoto": "img3",
+        "role": "user",
+        "ranking": 4,
+        "alreadyRanked": [
+            {
+                "name": "Laura",
+                "rank": 3
+            },
+            {
+                "name": "zuck",
+                "rank": 1
+            }
+        ],
+        "comments": [
+            {
+                "profilePhoto": "img1Comments3",
+                "name": "Laura",
+                "surname": "Zucker",
+                "email": "rR_123@gmail.com",
+                "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta? Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta.",
+                "created": "02 February, 2020"
+            },
+            {
+                "profilePhoto": "img2Comments3",
+                "name": "Johnny",
+                "surname": "Rolls",
+                "email": "jRj_12@gmail.com",
+                "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta? Velit molestias doloremque molestiae dicta.",
+                "created": "23 March, 2020"
+            },
+            {
+                "profilePhoto": "img3Comments3",
+                "name": "Laura",
+                "surname": "Zucker",
+                "email": "rR_123@gmail.com",
+                "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta? Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta.",
+                "created": "02 February, 2020"
+            },
+            {
+                "profilePhoto": "img4Comments3",
+                "name": "Maria",
+                "surname": "Funn",
+                "email": "mafunN@gmail.com",
+                "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta? Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta. Lorem ipsum dolor sit, amet consectetur adipisicing...",
+                "created": "29 January, 2021"
+            }
+        ],
+        "myBooks": [
+            {
+                "title": "The Not So Nice Book",
+                "author": "Someone Not So Cool",
+                "bookReleaseYear": 1989,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genre": ["Romance"],
+                "condition": "Like New",
+                "buy": true,
+                "rent": true,
+                "buyPrice": 12.23,
+                "rentPrice": 1.23,
+                "location": "Germany, Lubeck",
+                "phone": "(018) 0540-0640",
+                "pictures": ["img1", "img2", "img3", "img4"],
+                "timesGivenForRent": 3,
+                "seller": "Greta Schmuck"
+            },
+            {
+                "title": "The Best Book Ever",
+                "author": "Someone Cool",
+                "bookReleaseYear": 2002,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet. Aenean ac ligula eu purus pretium elementum vitae eget mauris. Integer sem eros, sagittis vel semper vitae, tincidunt vel sapien. Pellentesque dapibus, magna et cursus aliquam, nisi nulla facilisis neque, id consectetur eros lorem sed diam.",
+                "genre": ["Mystery", "Fantasy", "Horror"],
+                "condition": "New",
+                "buy": true,
+                "rent": false,
+                "buyPrice": 10.0,
+                "rentPrice": null,
+                "location": "Germany, Lubeck",
+                "phone": "(018) 0540-0640",
+                "pictures": ["img1", "img2", "img3", "img4", "img5"],
+                "timesGivenForRent": 0,
+                "seller": "Greta Schmuck"
+            }
+        ]
+    }
+]

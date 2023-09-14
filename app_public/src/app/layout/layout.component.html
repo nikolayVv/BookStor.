@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="d-none d-lg-block">
+          <a class="navbar-brand" routerLink="">
+            <img src="/assets/images/longlogo.png" alt="img missing" height="40"
+                 class="d-inline-block align-text-top">
+          </a>
+        </li>
+        <li class="d-lg-none">
+          <a class="nav-link" routerLink="">
+            Home
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="jePovezava()">
+          <a class="nav-link {{!jePovezava() ? 'disabled' : ''}}" routerLink="books" role="button" aria-expanded="false">
+            Contents
+          </a>
+        </li>
+        <li class="nav-item pr-2" *ngIf="!jePovezava()">
+          <i class="text-danger">Ni povezave!</i>
+        </li>
+      </ul>
+      <div class="btn-group dropstart d-none d-lg-block" *ngIf="buttonLogged">
+        <a type="button" class="btn btn-outline-success {{!jePovezava() ? 'disabled' : ''}}" data-bs-toggle="dropdown" aria-expanded="false"><i
+          class="fa fa-user"></i> My Profile </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li>
+              <span class="dropdown-item disabled"><img src="{{logged.profilePicture}}" alt="profile picture"
+                                                        class="rounded-circle d-inline" width="40" height="40">
+                <h6 class="d-inline ms-2">Hello, {{logged.name}} {{logged.surname}}!</h6>
+              </span>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item {{!jePovezava() ? 'disabled' : ''}}" routerLink="books/addEditBook">Add New Post</a></li>
+          <li><a class="dropdown-item {{!jePovezava() ? 'disabled' : ''}}" routerLink="myProfile">My Profile</a></li>
+          <li><a class="dropdown-item {{!jePovezava() ? 'disabled' : ''}}" routerLink="books/myBooks">My Sales</a></li>
+          <li><a class="dropdown-item {{!jePovezava() ? 'disabled' : ''}}" routerLink="" (click)="logout()">Log out</a></li>
+        </ul>
+      </div>
+      <div class="btn-group d-lg-none" *ngIf="buttonLogged">
+        <a type="button" class="btn btn-outline-success {{!jePovezava() ? 'disabled' : ''}}" data-bs-toggle="dropdown" aria-expanded="false"><i
+          class="fa fa-user"></i> My Profile </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li>
+                                <span class="dropdown-item disabled"><img src="{{logged.profilePicture}}"
+                                                                          alt="profile picture"
+                                                                          class="rounded-circle d-inline" width="40"
+                                                                          height="40">
+                                    <h6 class="d-inline ms-2">Hello, {{logged.name}} {{logged.surname}}!</h6>
+                                </span>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item {{!jePovezava() ? 'disabled' : ''}}" routerLink="books/addEditBook">Add New Post</a></li>
+          <li><a class="dropdown-item {{!jePovezava() ? 'disabled' : ''}}" routerLink="myProfile">My Profile</a></li>
+          <li><a class="dropdown-item {{!jePovezava() ? 'disabled' : ''}}" routerLink="books/myBooks">My Sales</a></li>
+          <li><a class="dropdown-item {{!jePovezava() ? 'disabled' : ''}}" (click)="logout()">Log out</a></li>
+        </ul>
+      </div>
+      <a class="btn btn-outline-success {{!jePovezava() ? 'disabled' : ''}}" routerLink="login" *ngIf="!buttonLogged">Login</a>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+

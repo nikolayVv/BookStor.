@@ -1,0 +1,11 @@
+ <div class="mt-auto row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1 row-cols-xxl-1">
+    <nav aria-label="pagination">
+      <ul class="pagination text-secondary justify-content-center">
+        <p>Page <span id="currentPage"><strong>{{ activePage }}</strong></span> of <span id="allPages"><strong>{{ allPages }}</strong></span></p>
+      </ul>
+      <ul class="pagination text-secondary justify-content-center">
+        <li id="prev" class="page-item {{ disabledPrev }}" (click)="onClickPage(activePage - 1)"><a class="page-link" href="javascript:void(0);">&laquo; Previous</a></li>
+        <li id="next" class="page-item {{ disabledNext }}" (click)="onClickPage(activePage + 1)"><a class="page-link" href="javascript:void(0);">Next &raquo;</a></li>
+      </ul>
+    </nav>
+</div>

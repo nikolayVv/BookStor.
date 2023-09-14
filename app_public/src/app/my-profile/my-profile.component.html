@@ -1,0 +1,147 @@
+<div class="container ">
+  <div class="main-body mt-3 ">
+    <div class="row gutters-sm">
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="{{user.profilePicture}}" class="rounded-circle" alt="profile picture" width="150" height="150">
+              <div class="mt-3">
+                <h4>{{user.name}} {{user.surname}} <i *ngIf="user.role == 'admin'" class="fa fa-check-circle"></i></h4>
+                <p class="text-secondary p-3"><i class="fa fa-star"></i> {{user.ranking}} </p>
+                <button type="submit" id="editProfile" class="btn btn-primary"
+                  data-bs-toggle="modal" data-bs-target="#userEdit" [disabled]="!jePovezava()">Edit Profile</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12 mt-1">
+        <div class="card mb-3">
+          <div class="card-body" [innerHTML]="user | userInfo"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row gutters-sm">
+      <div class="col ">
+        <ul class="list-group list-group-flush mb-4">
+          <li class="list-group-item list-group-item-dark d-flex justify-content-between align-items-center flex-wrap">
+            <h4 class="mb-0 mt-2 pt-1">
+              <p>Comments</p>
+            </h4> <br />
+          </li>
+          <div id="commentsList" class="overflow-auto">
+            <div *ngIf="!comments || comments && !comments.length">
+              <li
+                class="list-group-item d-flex justify-content-center align-items-center flex-wrap list-group-item-action disabled">
+                <h1 class="text-secondary">There aren't any comments for this user yet!</h1>
+              </li>
+
+            </div>
+            <div *ngIf="comments && comments.length">
+              <li
+                class="comment list-group-item d-flex justify-content-between align-items-center flex-wrap list-group-item-action"
+                *ngFor="let comment of filteredComments">
+                <div class=" mt-4 text-justify float-left"> <img src="{{comment.profilePicture}}" alt="profile picture"
+                    class="rounded-circle d-inline" width="40" height="40">
+                  <h5 class="d-inline ms-2"> {{comment.name}} <span class="text-secondary">({{comment.email}})</span>
+                  </h5>
+                  <p class="mt-2">{{comment.text}}</p>
+                </div>
+              </li>
+              <li id="lastField" class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <button id="showMoreButton" class="btn btn-link" *ngIf="comments.length > 3" (click)="showMore()" [disabled]="!jePovezava()">Show
+                  more</button>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal fade" id="userEdit" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true"
+      *ngIf="user._id">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form (ngSubmit)="editUser()">
+            <div class="input-group mb-3 p-4">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img id="imageId" src="{{user.profilePicture}}" class="rounded-circle h-100" alt="profile picture"
+                  width="150" height="150">
+              </div>
+              <input type="file" class="form-control" id="changePhoto" name="profilePhotoChange"
+                accept="image/png, image/jpeg, image/jpg">
+            </div>
+            <img src="" id="editImage" class="rounded-circle" alt="profile picture edit" width="200" height="200"
+              hidden>
+            <button type="button" id="removeEditImage" hidden>Remove</button>
+            <input type="text" name="editImageURL" id="editImageURL" [(ngModel)]= "user.profilePicture" value="{{user.profilePicture}}" hidden>
+            <div class="p-4">
+              <div class="input-group mb-3">
+                <input name="name" type="text" class="form-control" value="{{user.name}}" style="margin-right: 5%"
+                  readonly>
+                <input name="surname" type="text" class="form-control" value="{{user.surname}}" readonly>
+              </div>
+              <div class="input-group mb-3">
+                <input name="email" type="email" id="email" class="form-control" value="{{user.email}}" readonly>
+                <div id="sporociloEmail" class="invalid-feedback"></div>
+              </div>
+              <div class="input-group mb-3">
+                <input name="username" type="text" id="username" class="form-control" value="{{user.username}}"
+                  readonly>
+                <div id="sporociloUsername" class="invalid-feedback"></div>
+              </div>
+              <!-- <div class="input-group mb-3">
+                <input name="password" type="password" id="password" placeholder="Password" class="form-control"
+                  [(ngModel)]="user.password" value="{{user.password}}">
+                <div id="sporociloPassword" class="invalid-feedback"></div>
+              </div> -->
+              <div class="input-group mb-3">
+                <input name="country" type="text" id="country" placeholder="Country" class="form-control"
+                  [(ngModel)]="user.country" value="{{user.country}}">
+                <div id="sporociloCountry" class="invalid-feedback"></div>
+              </div>
+              <div class="input-group mb-3">
+                <input name="city" type="text" id="city" placeholder="City" class="form-control" [(ngModel)]="user.city"
+                  value="{{user.city}}">
+                <div id="sporociloCity" class="invalid-feedback"></div>
+              </div>
+              <div class="input-group mb-3">
+                <input name="address" type="text" id="address" placeholder="Address" class="form-control"
+                  [(ngModel)]="user.address" value="{{user.address}}">
+                <div id="sporociloAddress" class="invalid-feedback"></div>
+              </div>
+              <div class="input-group mb-3">
+                <input name="phoneNumber" type="text" id="phoneNumber" placeholder="Phone Number" class="form-control"
+                  [(ngModel)]="user.phoneNumber" value="{{user.phoneNumber}}">
+                <div id="sporociloNumber" class="invalid-feedback"></div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button id="saveProfile" class="btn btn-primary text-center m-1" type="submit" [disabled]="!jePovezava()">Save profile</button>
+                <a id="closeProfile" class="btn btn-outline-primary text-center m-1 " data-bs-dismiss="modal">Close</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="backgroundEditForm"></div>
+    <div id="overlay-editprofile" class="container-fluid">
+      <div class="d-flex justify-content-center mt-5">
+        <div class="col-md-6 col-sm-12 shadow-lg pt-5 p-3 bg-light">
+          <div class="text-center">
+            <h3>Edit Profile</h3>
+          </div>
+          <div class="d-flex flex-column align-items-center text-center">
+            <img id="imageId" src="{{user.profilePicture}}" class="rounded-circle h-100" alt="profile picture"
+              width="150" height="150">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

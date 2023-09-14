@@ -1,0 +1,164 @@
+<!-- removed class="carousel slide" class, if we want we can animate other 2 slides add new or upcoming stuff -->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-interval="20000">
+      <div class="overlay-image" style="background-image: url(/assets/images/homepage_pics/1.jpg);"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img class="mx-auto d-block overlay-content" src="/assets/images/main_page_logo-light%20-%20Copy.png">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <!-- container for search box -->
+            <div class="container pt-2 overlay-content">
+              <div class="row text-center text-white" id="searchBox">
+                <h1>Search books, genre or authors</h1>
+              </div>
+              <div class="row">
+                <div class="col-12 mt-2">
+                  <div class="search justify-content-center"><input id="searchBoxIndex" type="search"
+                                                                    class="form-control" [(ngModel)]="placeholder"
+                                                                    placeholder="{{placeholder}}"
+                                                                    [(ngModel)]="searchValue">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 pt-1 text-center">
+                  <a id="searchButton" class="btn btn-warning" (click)="Search()">Search</a>
+                </div>
+              </div>
+            </div>
+            <!-- ./container for search box -->
+          </div>
+        </div>
+        <div class="container p-3 mt-5">
+          <div class="carousel-caption d-none d-md-block">
+            <div *ngIf="jePovezava()">
+              <h6>{{quote?.content}}</h6>
+              <p><i>- {{quote?.author}}</i></p>
+            </div>
+            <!--<h6>You take what you can get, and good things follow, we ain't living for today, we're living for
+              tomorrow</h6>
+            <p><i>- Me</i></p>-->
+          </div>
+        </div>
+      </div>
+      <!-- <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+      </div> -->
+    </div>
+    <div class="carousel-item" data-interval="10000">
+      <div class="overlay-image" style="background-image: url(/assets/images/homepage_pics/2.jpg);"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img class="mx-auto img-fluid d-block overlay-content" src="/assets/images/comming_soon.png">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" data-interval="10000">
+      <div class="overlay-image" style="background-image: url(/assets/images/homepage_pics/3.jpg);"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img class="mx-auto img-fluid d-block overlay-content" src="/assets/images/comming_soon.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- carousel over -->
+
+<!-- big container for all content -->
+<div class="container bg-dark rounded">
+
+  <div class="container container-homepage">
+    <div class="row text-center text-white" id="theIdea">
+      <h1>The Idea</h1>
+    </div>
+    <div class="row  whiteboard rounded">
+      What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+      has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+      type and scrambled it to make a type
+      specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+      containing Lorem Ipsum passages,
+      and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </div>
+  </div>
+
+  <!-- container for about team-->
+  <div class="container container-hompage">
+    <div class="row text-center text-white" id="ourTeam">
+      <h1>Our Team</h1>
+    </div>
+    <!-- four columns for each member of the team -->
+    <div class="row row-cols-xs-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 whiteboard rounded">
+      <div *ngFor="let member of members">
+        <div class="col-12">
+          <img class="rounded-circle img-fluid" src="{{member.img}}" alt="Generic placeholder image" width="140"
+               height="140">
+          <h2>{{member.name}}</h2>
+          <p>{{member.info}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ./container about team over -->
+
+  <!-- container with featurettes of books popural this month -->
+  <div class="container container-hompage">
+    <div class="row text-center text-white" id="popularBooks">
+      <h1>Most bought in Ethereum</h1>
+    </div>
+    <app-chart></app-chart>
+  </div>
+  <div class="container container-hompage">
+    <div class="row text-center text-white" id="popularBooks">
+      <h1>Most popular this month</h1>
+    </div>
+    <div *ngFor="let book of books | async">
+      <hr class="featurette-divider">
+      <div class="row featurette whiteboard rounded">
+        <div class="col-md-7">
+          <h2 id="{{book._id}}" class="featurette-heading">{{book.title}} <span
+            class="text-muted">{{book.author}}</span>
+          </h2>
+          <p class="lead">{{book.description}}</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" alt="{{book.title}}" src="{{book.pictures[0]}}"
+               data-holder-rendered="true">
+        </div>
+      </div>
+    </div>
+
+    <!-- /END THE FEATURETTES -->
+
+    <!-- ./container with featurettes over -->
+  </div>
+</div>
+
+<div class="text-center" *ngIf="!jePovezava()">
+  <b><i class="text-danger">Ni povezave!</i></b>
+</div>

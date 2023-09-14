@@ -1,0 +1,9 @@
+http://localhost:4200/
+http://localhost:4200/login
+http://localhost:4200/regiser
+http://localhost:4200/books
+http://localhost:4200/myProfile
+http://localhost:4200/books/addEditBook
+http://localhost:4200/books/myBooks
+http://localhost:4200/books/bookDetails/61daf8fd135b94b3f41e85c2
+http://localhost:4200/usersProfileView/61daf8fd135b94b3f41e85ad

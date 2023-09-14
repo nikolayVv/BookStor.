@@ -1,0 +1,44 @@
+<div class="row gutters-sm">
+<div class="col-xxl-3 col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12 mb-3">
+<!-- TODO check if admin or user is logged => CHECKED + DELETE BUTTON-->
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex flex-column align-items-center text-center">
+        <img src="{{user.profilePicture}}" class="rounded-circle" alt="profile picture" width="150" height="150">
+        <div class="mt-3"> <h4>{{user.name}} {{user.surname}} <i *ngIf="user.role == 'admin'" class="fa fa-check-circle"></i></h4>
+          <p  class="text-secondary  p-3"><i class="fa fa-star"></i> {{user.ranking | number : '1.2-2'}} </p>
+        </div>
+      </div>
+      <div class="row" *ngIf="logged._id">
+        <div class="text-center col">
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rating" [disabled]="!jePovezava()">Rate profile</button>
+        </div>
+        <div *ngIf="logged.role == 'admin'" class="text-center col">
+            <button type="submit" class="btn bg-danger btn-outline-dark mt-auto" (click)="deleteUser(user._id)" [disabled]="!jePovezava()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12 mt-1">
+    <div class="card mb-3">
+      <div class="card-body" [innerHTML]="user | userInfo"></div>
+    </div>
+  </div>
+</div>
+<!--    formControlName="rating" [id]="'rating'"-->
+<!--    <ngx-star-rating></ngx-star-rating>-->
+<!--<i class="fa fa-check-circle">-->
+
+<!--MY PROFILE-->
+<!--<div class="card">-->
+<!--  <div class="card-body">-->
+<!--    <div class="d-flex flex-column align-items-center text-center">-->
+<!--      <img src="${user.profilePicture}" class="rounded-circle" alt="profile picture" width="150" height="150">-->
+<!--      <div class="mt-3"> <h4>${user.name} ${user.surname} ${admin}</h4>-->
+<!--        <p class="text-secondary p-3"><i class="fa fa-star"></i> ${user.ranking} </p>-->
+<!--        <button id="editProfile"  class="btn btn-primary">Edit Profile</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

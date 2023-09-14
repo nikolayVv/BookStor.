@@ -1,0 +1,147 @@
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="8000">
+            <div class="overlay-image" style="background-image: url(images/homepage_pics/1.jpg);"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="mx-auto d-block overlay-content" src="images/main_page_logo-light%20-%20Copy.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- container for search box -->
+                        <div class="container pt-5 overlay-content">
+                            <div class="row text-center text-white" id="searchBox">
+                                <h1>Search books, genre or authors</h1>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="search justify-content-center"> <i class="fa fa-search"></i><input
+                                            id="searchBoxIndex" type="search" class="form-control"
+                                            placeholder="Search by title">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 pt-3 text-center">
+                                    <a id="searchButton" class="btn btn-warning" href="/books/filtered/noFilter">Search</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./container for search box -->
+                    </div>
+                </div>
+                <div class="container p-3">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>{{quoteContent}}</h5>
+                    <p><i>- {{quoteAuthor}}</i></p>
+                </div>
+                </div>
+            </div>
+            <!-- <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+            </div> -->
+        </div>
+        <div class="carousel-item" data-interval="5000">
+            <div class="overlay-image" style="background-image: url(images/homepage_pics/2.jpg);"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="mx-auto d-block overlay-content" src="images/comming_soon.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" data-interval="5000">
+            <div class="overlay-image" style="background-image: url(images/homepage_pics/3.jpg);"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="mx-auto d-block overlay-content" src="images/comming_soon.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- carousel over -->
+
+<!-- big container for all content -->
+<div class="container bg-dark rounded">
+
+    <div class="container container-homepage">
+        <div class="row text-center text-white" id="theIdea">
+            <h1>The Idea</h1>
+        </div>
+        <div class="row  whiteboard rounded">
+            What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+            containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+    </div>
+
+    <!-- container for about team-->
+    <div class="container container-hompage">
+        <div class="row text-center text-white" id="ourTeam">
+            <h1>Our Team</h1>
+        </div>
+        <!-- four columns for each member of the team -->
+        <div class="row row-cols-xs-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 whiteboard rounded">
+            {{#each members as |member|}}
+            <div class="col-12">
+                <img class="rounded-circle img-fluid" src={{member.img}} alt="Generic placeholder image" width="140"
+                    height="140">
+                <h2>{{member.name}}</h2>
+                <p>{{member.info}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <!-- ./container about team over -->
+
+    <!-- container with featurettes of books popural this month -->
+    <div class="container container-hompage">
+        <div class="row text-center text-white" id="popularBooks">
+            <h1>Most popular this month</h1>
+        </div>
+        {{{showTopBooks books}}}
+        {{!-- {{#each books as |book|}}
+        <hr class="featurette-divider">
+
+        <div class="row featurette whiteboard rounded">
+            <div class="col-md-7">
+                <h2 id={{book.id}} class="featurette-heading">{{book.heading}}<span
+                        class="text-muted">{{book.authors}}</span></h2>
+                <p class="lead">{{book.summary}}</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-fluid mx-auto" alt={{book.heading}}(cover) src={{book.img}}
+                    data-holder-rendered="true">
+            </div>
+        </div>
+        {{/each}} --}}
+        <!-- /END THE FEATURETTES -->
+
+    </div>
+    <!-- ./container with featurettes over -->
+</div>

@@ -1,0 +1,48 @@
+[
+    {
+        "title": "The Not So Nice Book",
+        "author": "Someone Not So Cool",
+        "bookReleaseYear": 1989,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+        "genre": ["Romance", "Comedy"],
+        "condition": "Like New",
+        "rent": true,
+        "buyPrice": 12.23,
+        "rentPrice": 1.23,
+        "location": "Germany, Lubeck",
+        "phone": "(018) 0540-0640",
+        "pictures": ["img1", "img2", "img3", "img4"],
+        "timesRented": 3,
+        "seller": "Greta Schmuck"
+    },
+    {
+        "title": "The Best Book Ever",
+        "author": "Someone Cool",
+        "bookReleaseYear": 2002,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet. Aenean ac ligula eu purus pretium elementum vitae eget mauris. Integer sem eros, sagittis vel semper vitae, tincidunt vel sapien. Pellentesque dapibus, magna et cursus aliquam, nisi nulla facilisis neque, id consectetur eros lorem sed diam.",
+        "genre": ["Mystery", "Fantasy", "Horror"],
+        "condition": "New",
+        "buyPrice": 10.0,
+        "location": "Germany, Lubeck",
+        "phone": "(018) 0540-0640",
+        "pictures": ["img1", "img2", "img3", "img4", "img5"],
+        "seller": "Greta Schmuck"
+    },
+    {
+        "title": "Kinda Good Comic Book",
+        "author": "Cool Guys Who Draws",
+        "bookReleaseYear": 1968,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper.",
+        "genre": ["Comic Books", "Fantasy"],
+        "condition": "Used",
+        "buy": false,
+        "rent": true,
+        "buyPrice": 0.0,
+        "rentPrice": 3.3,
+        "location": "United States, Hartford",
+        "phone": "(860) 375-1478",
+        "pictures": ["img1", "img2"],
+        "timesGivenForRent": 1,
+        "seller": "Johnny Andrews"
+    }
+]

@@ -1,0 +1,41 @@
+<div class="row gutters-sm">
+  <div class="col ">
+    <ul class="list-group list-group-flush mb-4">
+      <li class="list-group-item list-group-item-dark d-flex justify-content-between align-items-center flex-wrap">
+        <h4 class="mb-0 mt-2 pt-1">
+          <p>Comments</p>
+        </h4> <br />
+      </li>
+      <div id="commentsList" class="overflow-auto">
+        <div *ngIf="!comments || comments && !comments.length">
+          <li class="list-group-item d-flex justify-content-center align-items-center flex-wrap list-group-item-action disabled">
+            <h1 class="text-secondary">There aren't any comments for this user yet!</h1>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap" *ngIf="logged._id">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#comment" [disabled]="!jePovezava()">
+              Leave a comment
+            </button>
+          </li>
+        </div>
+        <div *ngIf="comments && comments.length">
+            <li class="comment list-group-item d-flex justify-content-between align-items-center flex-wrap list-group-item-action" *ngFor="let comment of filteredComments">
+              <div class=" mt-4 text-justify float-left"> <img src="{{comment.profilePicture}}" alt="profile picture" class="rounded-circle d-inline" width="40" height="40">
+                <h5 class="d-inline ms-2"> {{comment.name}} <span class="text-secondary">({{comment.email}})</span></h5>
+                <p class="mt-2">{{comment.text}}</p>
+                <form (submit)="deleteComment(comment._id)">
+                  <span class="text-secondary">{{comment.created | date: "d. MMMM, yyyy - h:mm:ss"}}</span>
+                  <input type="submit" class="btn btn-link text-decoration-none" value="Delete comment" *ngIf="comment.email == logged.email" [disabled]="!jePovezava()">
+                </form>
+              </div>
+            </li>
+            <li id="lastField" class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+              <button id="showMoreButton" class="btn btn-link" *ngIf="comments.length > 3" (click)="showMore()" [disabled]="!jePovezava()">Show more</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#comment" *ngIf="logged._id" [disabled]="!jePovezava()">
+                  Leave a comment
+                </button>
+            </li>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>

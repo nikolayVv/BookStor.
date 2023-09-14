@@ -1,0 +1,74 @@
+<app-search-contents></app-search-contents>
+<script src="build/runtime.a0dc755220bd179f.js"></script>
+<script src="build/polyfills.a1c48e0524b1fa1c.js"></script>
+<script src="build/main.91d1d1adc86f2aa1.js"></script>
+<!--<div class="container-fluid">-->
+<!--    <div class="row">-->
+
+<!--        <div class="col col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 p-0">-->
+<!--            <button class="w-100 btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#filter"-->
+<!--                aria-expanded="false" aria-controls="collapseExample">-->
+<!--                Filters-->
+<!--            </button>-->
+<!--            <div id="filter" class="collapse show bg-light p-1">-->
+<!--                <div class="t-products mt-3 mb-2">-->
+<!--                    <input id="search" type="search" class="form-control rounded" placeholder="Search by title" value="{{search}}"/>-->
+<!--                </div>-->
+<!--                <div class="p-2">-->
+<!--                    <div class="heading d-flex justify-content-between align-items-center">-->
+<!--                        <h6 class="text-uppercase">Genres</h6>-->
+<!--                    </div>-->
+<!--                    {{#each filters.genres as |genre|}}-->
+<!--                    {{{showGenresFilter genre ../books}}}-->
+<!--                    {{/each}}-->
+<!--                </div>-->
+<!--                <div class="p-2">-->
+<!--                    <div class="heading d-flex justify-content-between align-items-center">-->
+<!--                        <h6 class="text-uppercase">Type of ad</h6>-->
+<!--                    </div>-->
+<!--                    {{#each filters.types as |type|}}-->
+<!--                    {{{showTypesFilter type ../books}}}-->
+<!--                    {{/each}}-->
+<!--                </div>-->
+<!--                <div class="p-2">-->
+<!--                    <div class="heading d-flex justify-content-between align-items-center">-->
+<!--                        <h6 class="text-uppercase">Order by</h6>-->
+<!--                    </div>-->
+<!--                    {{#each filters.orders as |order|}}-->
+<!--                    {{{showOrderByFilter order}}}-->
+<!--                    {{/each}}-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        <div class="col col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 mt-3 d-flex flex-column ms-auto">-->
+<!--                {{#if books}}-->
+<!--                    <div id="bookList" class="mb-auto row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-3">-->
+<!--                        {{#each books as |book|}}-->
+<!--                            {{{showBook book ../logged}}}-->
+<!--                        {{/each}}-->
+<!--                    </div>-->
+<!--                    <div class="mt-auto row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1 row-cols-xxl-1">-->
+<!--                        {{{createPagination books}}}-->
+<!--                    </div>-->
+<!--                {{else}}-->
+<!--                    <div id="bookList" class="row h-100">-->
+<!--                        <div class="col mb-5">-->
+<!--                            <div class="card h-100 align-items-center">-->
+<!--                                <div class="card-body p-4 align-items-center row justify-content-center align-self-center">-->
+<!--                                    <div class="text-center">-->
+<!--                                        <h1 class="text-secondary">{{message}}</h1>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="mt-auto row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1 row-cols-xxl-1">-->
+<!--                        {{{createPagination books}}}-->
+<!--                    </div>-->
+<!--                {{/if}}-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

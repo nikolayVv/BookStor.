@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Johnny",
+        "surname": "Andrews",
+        "email": "johnny_a@gmail.com",
+        "username": "johnnyAndr",
+        "password": "Johnny123",
+        "country": "United States",
+        "city": "Hartford",
+        "address": "1944 Lochmere Lane",
+        "phoneNumber": "(860) 375-1478",
+        "role": "admin"
+    },
+    {
+        "name": "Andrew",
+        "surname": "Smith",
+        "email": "aNdReWsh@gmail.com",
+        "username": "IamAndrew_S",
+        "password": "Smith111",
+        "country": "United States",
+        "city": "New York",
+        "address": "1523 Morningview Lane",
+        "phoneNumber": "(646) 209-1533",
+        "role": "user"
+    },
+    {
+        "name": "Greta",
+        "surname": "Schmuck",
+        "email": "Greta_sS@gmail.com",
+        "username": "GretaLovesGerman123",
+        "password": "GretaSh002",
+        "country": "Germany",
+        "city": "Lubeck",
+        "address": "Rudower Chaussee 74",
+        "phoneNumber": "(018) 540-0640",
+        "role": "user"
+    },
+    {
+        "name": "Jennifer",
+        "surname": "Hibbert",
+        "email": "JenniferRHibbert@armyspy.com",
+        "username": "Lity1968",
+        "password": "PasswordD222",
+        "country": "United States",
+        "city": "Clarion",
+        "address": "368 Nutters Barn Lane",
+        "phoneNumber": "(812) 878-5182",
+        "role": "user"
+    },
+    {
+        "name": "Yunxiang",
+        "surname": "Shi",
+        "email": "shiYun@gmail.com",
+        "username": "edward_abe1978",
+        "password": "Eed8Hee5Ch",
+        "country": "China",
+        "city": "DongCheng District",
+        "address": "Jiao Dao Kou Dong Da Jie 81hao",
+        "phoneNumber": "(130) 638-4430",
+        "role": "user"
+    }
+]

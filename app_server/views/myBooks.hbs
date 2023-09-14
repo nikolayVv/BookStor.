@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="col-12 mt-3">
+        <div class="input-group pb-4">
+            <input type="search" class="form-control rounded" placeholder="Search your sales" aria-label="Search"
+                aria-describedby="search-addon" id="search" />
+            <button type="button" class="btn btn-primary">Search</button>
+        </div>
+
+        {{#if books}}
+        <div id="bookList"
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-4 justify-content-left">
+            {{#each books as |myBook|}}
+            {{{showMyBook myBook}}}
+
+            {{/each}}
+            {{else}}
+            <div id="bookList" class="row h-100">
+                <div class="col mb-5">
+                    <div class="card h-100 align-items-center">
+                        <div class="card-body p-4 align-items-center row justify-content-center align-self-center">
+                            <div class="text-center">
+                                <h1 class="text-secondary">{{message}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+        <div class="mt-auto row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1 row-cols-xxl-1">
+            {{{createPagination books}}}
+        </div>
+    </div>
+</div>

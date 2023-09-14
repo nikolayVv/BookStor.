@@ -1,0 +1,80 @@
+ <div class="container ">
+        <div class="main-body mt-3 ">
+            <div class="row gutters-sm">
+                <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12 mb-3">
+                    {{{showUserCard user "Just Profile" logged}}}
+                </div>
+                <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12 mt-1">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            {{{showUserInfo user}}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gutters-sm">
+                <div class="col ">
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item list-group-item-dark d-flex justify-content-between align-items-center flex-wrap">
+                            <h4 class="mb-0 mt-2 pt-1">
+                                <p>Comments</p>
+                            </h4> <br />
+                        </li>
+                        <div id="commentsList" class="overflow-auto">
+                            {{#if comments}}
+                                {{#each comments as |comment|}}
+                                    {{{showComment comment ../logged ../user}}}
+                                {{/each}}
+                                {{{showMoreButton countOfComments user logged}}}
+                            {{else}}
+                                <li class="list-group-item d-flex justify-content-center align-items-center flex-wrap list-group-item-action disabled">
+                                    <h1 class="text-secondary">{{message}}</h1>
+                                    {{{showMoreButton countOfComments user logged}}}
+                                </li>
+                            {{/if}}
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="comment" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="commentModalLabel">New comment</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="post" id="align-form">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <textarea name="comment" id="newComment" msg cols="30" rows="5" class="form-control" placeholder="Leave your comment here..." required></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <input type="submit" class="btn btn-primary" value="Post" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="rating" tabindex="-1" aria-labelledby="ratingModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ratingModalLabel">Rating</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="/usersProfileView/{{user._id}}/addRating" method="post">
+                        <div class="modal-body">
+                            <input id="input-9" name="rank" class="rating-loading" data-step="0.1"  data-show-caption="true" data-size="lg" value="{{getRanking rankings logged}}">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button id="ratingButton" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

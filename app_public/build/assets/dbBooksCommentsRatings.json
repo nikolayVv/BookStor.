@@ -1,0 +1,369 @@
+[
+    {
+        "books": [],
+        "comments": [
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Jennifer Hibbert",
+                "email": "JenniferRHibbert@armyspy.com",
+                "text": "From this day on I shall be known as Bob. For Bob is a good name and I am good. But if you want you can just call me Sally."
+            },
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Yunxiang Shi",
+                "email": "shiYun@gmail.com",
+                "text": "If you really wanted to do that, then why wouldn't you do that? Instead you do this. It makes no sense."
+            }
+        ],
+        "ratings": [
+            {
+                "rank": 2
+            }
+        ]
+    },
+    {
+        "books": [
+            {
+                "title": "Harry Potter and the Philosopher's Stone",
+                "author": "J. K. Rowling",
+                "bookReleaseYear": 1997,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Fantasy", "Thriller"],
+                "condition": "Like New",
+                "buy": true,
+                "rent": true,
+                "buyPrice": 16.23,
+                "rentPrice": 11.32,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            },
+            {
+                "title": "Harry Potter and the Goblet of Fire",
+                "author": "J. K. Rowling",
+                "bookReleaseYear": 2000,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Fantasy", "Thriller"],
+                "condition": "New",
+                "buy": true,
+                "rent": true,
+                "buyPrice": 21.2,
+                "rentPrice": 15.99,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            },
+            {
+                "title": "Harry Potter and the Deathly Hallows",
+                "author": "J. K. Rowling",
+                "bookReleaseYear": 2007,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Fantasy", "Thriller"],
+                "condition": "New",
+                "buy": true,
+                "rent": true,
+                "buyPrice": 33.99,
+                "rentPrice": 20.0,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            },
+            {
+                "title": "The Hunger Games",
+                "author": "Suzanne Collins",
+                "bookReleaseYear": 2008,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Action & Adventure", "Thriller"],
+                "condition": "Like New",
+                "buy": true,
+                "rent": true,
+                "buyPrice": 22.55,
+                "rentPrice": 12.12,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            },
+            {
+                "title": "Romeo and Juliet ",
+                "author": "William Shakespeare",
+                "bookReleaseYear": 1597,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Romance", "Poetry"],
+                "condition": "Poor",
+                "buy": true,
+                "rent": false,
+                "buyPrice": 8.99,
+                "rentPrice": 0.0,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            }
+        ],
+        "comments": [
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Jennifer Hibbert",
+                "email": "JenniferRHibbert@armyspy.com",
+                "text": "From this day on I shall be known as Bob. For Bob is a good name and I am good. But if you want you can just call me Sally."
+            },
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Yunxiang Shi",
+                "email": "shiYun@gmail.com",
+                "text": "If you really wanted to do that, then why wouldn't you do that? Instead you do this. It makes no sense."
+            },
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Johnny Andrews",
+                "email": "johnny_a@gmail.com",
+                "text": "The human body was designed by a civil engineer. Who else would run a toxic waste pipeline through a recreational area?"
+            },
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Yunxiang Shi",
+                "email": "shiYun@gmail.com",
+                "text": "I like to wax my legs and stick the hair on my back. Why? Because it keeps my back warm. There's method in my madness."
+            },
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Johnny Andrews",
+                "email": "johnny_a@gmail.com",
+                "text": "After one look at this planet any visitor from outer space would say “I WANT TO SEE THE MANAGER.”"
+            }
+        ],
+        "ratings": []
+    },
+    {
+        "books": [
+            {
+                "title": "At the Mountains of Madness",
+                "author": "H.P. Lovecraft",
+                "bookReleaseYear": 1931,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Action & Adventure", "Thriller"],
+                "condition": "Like New",
+                "buy": true,
+                "rent": true,
+                "buyPrice": 12.23,
+                "rentPrice": 6.32,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            },
+            {
+                "title": "Harry Potter and the Chamber of Secrets",
+                "author": "J. K. Rowling",
+                "bookReleaseYear": 1998,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Fantasy", "Thriller"],
+                "condition": "Used",
+                "buy": false,
+                "rent": true,
+                "buyPrice": 0.0,
+                "rentPrice": 8.99,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            },
+            {
+                "title": "Harry Potter and the Half-Blood Prince",
+                "author": "J. K. Rowling",
+                "bookReleaseYear": 2005,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Fantasy", "Thriller"],
+                "condition": "Like New",
+                "buy": true,
+                "rent": true,
+                "buyPrice": 21.99,
+                "rentPrice": 15.0,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            }
+        ],
+        "comments": [
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Jennifer Hibbert",
+                "email": "JenniferRHibbert@armyspy.com",
+                "text": "From this day on I shall be known as Bob. For Bob is a good name and I am good. But if you want you can just call me Sally."
+            },
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Yunxiang Shi",
+                "email": "shiYun@gmail.com",
+                "text": "If you really wanted to do that, then why wouldn't you do that? Instead you do this. It makes no sense."
+            }
+        ],
+        "ratings": []
+    },
+    {
+        "books": [
+            {
+                "title": "Land of Big Numbers",
+                "author": "Te-Ping Chen",
+                "bookReleaseYear": 2021,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["History"],
+                "condition": "New",
+                "buy": true,
+                "rent": false,
+                "buyPrice": 22.23,
+                "rentPrice": 0.0,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            },
+            {
+                "title": "The Avengers #4",
+                "author": " Jack Kirby",
+                "bookReleaseYear": 1964,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Classics", "Comic Books"],
+                "condition": "Used",
+                "buy": false,
+                "rent": true,
+                "buyPrice": 0.0,
+                "rentPrice": 11.0,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            }
+        ],
+        "comments": [
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Johnny Andrews",
+                "email": "johnny_a@gmail.com",
+                "text": "The human body was designed by a civil engineer. Who else would run a toxic waste pipeline through a recreational area?"
+            },
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Yunxiang Shi",
+                "email": "shiYun@gmail.com",
+                "text": "I like to wax my legs and stick the hair on my back. Why? Because it keeps my back warm. There's method in my madness."
+            },
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Johnny Andrews",
+                "email": "johnny_a@gmail.com",
+                "text": "After one look at this planet any visitor from outer space would say “I WANT TO SEE THE MANAGER.”"
+            }
+        ],
+        "ratings": [
+            {
+                "rank": 4
+            }
+        ]
+    },
+    {
+        "books": [
+            {
+                "title": "The Argonauts",
+                "author": "Maggie Nelson",
+                "bookReleaseYear": 2015,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Science Fiction", "Action & Adventure"],
+                "condition": "Like New",
+                "buy": true,
+                "rent": false,
+                "buyPrice": 15.99,
+                "rentPrice": 0.0,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            },
+            {
+                "title": "The Coldest Girl in Coldtown",
+                "author": "Holly Black",
+                "bookReleaseYear": 2013,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Thriller", "Classics"],
+                "condition": "Used",
+                "buy": true,
+                "rent": false,
+                "buyPrice": 10.11,
+                "rentPrice": 0.0,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            },
+            {
+                "title": "The Immortalists",
+                "author": "Chloe Benjamin",
+                "bookReleaseYear": 2018,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc volutpat, nulla eu ullamcorper ullamcorper, diam lacus auctor felis, sit amet mollis felis quam porttitor sapien. Sed suscipit mauris vitae sem tempus, vel eleifend ex semper. Integer pellentesque mi ac ipsum vestibulum lobortis. Donec sodales erat et elit cursus imperdiet.",
+                "genres": ["Horror", "Thriller", "Mystery"],
+                "condition": "Like New",
+                "buy": true,
+                "rent": true,
+                "buyPrice": 12.23,
+                "rentPrice": 4.5,
+                "pictures": [
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png",
+                    "/assets/images/book.png"
+                ],
+                "ethereumAddress": ""
+            }
+        ],
+        "comments": [
+            {
+                "profilePicture": "/assets/images/avatar.png",
+                "name": "Greta Schmuck",
+                "email": "Greta_sS@gmail.com",
+                "text": "I like to say things twice, say things twice. It can get annoying though, annoying though."
+            }
+        ],
+        "ratings": []
+    }
+]

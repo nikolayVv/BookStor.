@@ -1,0 +1,194 @@
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-center" style="margin-top:3%;">
+        <div class="col-xl-8 col-md-10 col-sm-12 shadow-lg p-4 bg-light rounded">
+            <div class="text-center">
+                <h3>Edit your book</h3>
+            </div>
+            <br>
+            <!-- title, author, release date, description, genre, condition, buy price, rent price, location, phone number, pictures -->
+            <form (ngSubmit)="posodobiKnjigo()" id="editbookForm">
+
+                <label for="title" class="form-label"><b>Book title</b></label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="title" id="title" value="" maxlength="80"
+                        required [(ngModel)]="curentBook.title">
+                </div>
+
+                <label for="author" class="form-label"><b>Author</b></label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="author" id="author" value="author" maxlength="80"
+                        required [(ngModel)]="curentBook.author">
+                    <div id="sporociloAuthor" class="invalid-feedback"></div>
+                </div>
+
+                <label for="year" class="form-label"><b>Book release year</b></label>
+                <div class="input-group mb-3">
+                    <div class="col-md-4">
+                        <input type="number" min="1000" max="2100" step="1" class="form-control" name="year" id="year"
+                            value="" maxlength="5" required [(ngModel)]="curentBook.bookReleaseYear">
+                    </div>
+                </div>
+
+                <label for="description" class="form-label"><b>Book Description</b></label>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-8">
+                            <textarea id="description" name="description" class="form-control" rows="5" maxlength="400"
+                                required [(ngModel)]="curentBook.description"></textarea>
+                            <div id="sporociloDescription" class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" id="submit1" style="border: none; background: transparent;">Max 250 characters</button>
+                </div>
+
+                <div>
+                    <br>
+                    <label for="genre" class="form-label"><b>Genre</b></label>
+                    <div class="col-md-8">
+                        <select class="form-select" id="genre" name="genre" [(ngModel)]="curentBook.genres">
+
+                            <option value="Action & Adventure">Action & Adventure</option>
+                            <option value="Classics">Classics</option>
+                            <option value="Comic Books">Comic Books</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Science Fiction">Science Fiction</option>
+                            <option value="History">History</option>
+                            <option value="Poetry">Poetry</option>
+                            <option value="Biographies">Biographies</option>
+                            <option value="Children’s">Children’s</option>
+                            <option value="Humor">Humor</option>
+                            <option value="Art & Photography">Art & Photography</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Guide / How-to">Guide / How-to</option>
+                            <option value="Cookbooks">Cookbooks</option>
+                            <option value="Self-Help">Self-Help</option>
+                            <option value="Parenting & Families">Parenting & Families</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <br>
+                    <label for="condition" class="form-label"><b>Condition</b></label>
+                    <div class="col-md-6">
+                        <select class="form-select" id="condition" name="condition" [(ngModel)]="curentBook.condition">
+
+                            <option value="New">New</option>
+                            <option value="Like new">Like new</option>
+                            <option value="Used">Used</option>
+                            <option value="Poor">Poor</option>
+                        </select>
+                    </div>
+                    <br>
+                </div>
+
+                <label for="price1" class="form-label"><b>Price (buy / rent)</b></label>
+                <div class="input-group mb-3">
+                    <input type="number" id="price1" name="price1" min="0" max="99999" step="0.01" class="form-control"
+                        value="" [(ngModel)]="curentBook.buyPrice">
+                    <span class="input-group-text">€</span>
+                    <input type="number" id="price2" name="price2" min="0" max="99999" step="0.01" class="form-control"
+                        value="" [(ngModel)]="curentBook.rentPrice">
+                    <span class="input-group-text">€/week</span>
+                </div>
+
+                <div>
+
+                    <input type="checkbox" id="buyable" name="buyable" [(ngModel)]="curentBook.buy" checked>
+                    <label for="buyOnly">This book can be bought</label>
+
+                </div>
+                <div>
+
+                    <input type="checkbox" id="rentable" name="rentable" [(ngModel)]="curentBook.rent" checked>
+                    <label for="buyOnly">This book can be rented</label>
+                </div>
+
+                <div id="sporociloBuyRent" class="text-danger"></div>
+                <br>
+                <br>
+                <label for="location" class="form-label"><b>Location</b></label>
+                <div class="input-group mb-3">
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="location" id="location" value=""
+                            maxlength="80" required [(ngModel)]="curentBook.location">
+                        <div id="sporociloLocation" class="invalid-feedback"></div>
+                    </div>
+                </div>
+
+                <label for="phone" class="form-label"><b>Phone number</b></label>
+                <div class="input-group mb-3">
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="phone" id="phone" value="" maxlength="80"
+                            required [(ngModel)]="curentBook.phone">
+                        <div id="sporociloPhone" class="invalid-feedback"></div>
+                    </div>
+                </div>
+
+                <label for="ethereumAddress" class="form-label"><b>Ethereum address</b></label>
+                <div class="input-group mb-3">
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="ethereumAddress" id="ethereumAddress"
+                            [(ngModel)]="curentBook.ethereumAddress" placeholder="Enter your ethereum address here">
+                        <div id="sporociloEthereum" class="invalid-feedback"></div>
+                    </div>
+                </div>
+
+                <label for="file0" class="form-label"><b>Pictures</b></label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file0" name="file0"
+                        accept="image/png, image/jpeg, image/jpg">
+                </div>
+                <img src="" id="slika0" alt="Slika" width="200" height="200" hidden>
+                <button type="button" id="remove0" hidden>Remove</button>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file1" name="file1"
+                        accept="image/png, image/jpeg, image/jpg">
+                </div>
+                <img src="" id="slika1" alt="Slika" width="200" height="200" hidden>
+                <button type="button" id="remove1" hidden>Remove</button>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file2" name="file2"
+                        accept="image/png, image/jpeg, image/jpg">
+                </div>
+                <img src="" id="slika2" alt="Slika" width="200" height="200" hidden>
+                <button type="button" id="remove2" hidden>Remove</button>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file3" name="file3"
+                        accept="image/png, image/jpeg, image/jpg">
+                </div>
+                <img src="" id="slika3" alt="Slika" width="200" height="200" hidden>
+                <button type="button" id="remove3" hidden>Remove</button>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file4" name="file4"
+                        accept="image/png, image/jpeg, image/jpg">
+                </div>
+                <img src="" id="slika4" alt="Slika" width="200" height="200" hidden>
+                <button type="button" id="remove4" hidden>Remove</button>
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-10 col-xxl-12">
+                    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5">
+                        <input type="text" name="slikaURL0" id="slikaURL0" value="" hidden [(ngModel)]="curentBook.pictures[0]">
+                        <input type="text" name="slikaURL1" id="slikaURL1" value="" hidden [(ngModel)]="curentBook.pictures[1]">
+                        <input type="text" name="slikaURL2" id="slikaURL2" value="" hidden [(ngModel)]="curentBook.pictures[2]">
+                        <input type="text" name="slikaURL3" id="slikaURL3" value="" hidden [(ngModel)]="curentBook.pictures[3]">
+                        <input type="text" name="slikaURL4" id="slikaURL4" value="" hidden [(ngModel)]="curentBook.pictures[4]">
+
+                    </div>
+                </div>
+
+                <br>
+
+                <div>
+                    <button class="btn btn-primary" type="submit" id="submit" [disabled]="!jePovezava()">Post Edited Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

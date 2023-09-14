@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BookStor.</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/jpg" href="../images/miniicon%20-%20light.png">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <meta name="keywords" content="SP, SPA, Node.js, JavaScript, HTML, CSS,
+      Heroku, Cloud9, GitHub, Pug, Express, MongoDB, books, store, stor, sell, buy, rent, search, book, bookss" />
+    <meta name="description" content="Bookstor. Sell, buy, rent books, search books and view their contents online" />
+    <meta name="title" content="Bookstor">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+</head>
+
+<body class="background-wawy">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="d-none d-lg-block">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="../public/images/longlogo.png" alt="img missing" height="40" class="d-inline-block align-text-top">
+                        </a>
+                    </li>
+                    <li class="d-lg-none">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="searchContentsView.html" role="button" aria-expanded="false">
+                            Contents
+                        </a>
+                    </li>
+                </ul>
+                <div class="btn-group dropstart d-none d-lg-block">
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user"></i> My Profile
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>
+                            <span class="dropdown-item disabled"><img src="../public/images/avatar.png" alt="profile picture"
+                                                                      class="rounded-circle d-inline" width="40" height="40">
+                                <h6 class="d-inline ms-2">Hello, Name Surname!</h6>
+                            </span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="addEditBook.html">Add New Post</a></li>
+                        <li><a class="dropdown-item" href="myProfile.html">My Profile</a></li>
+                        <li><a class="dropdown-item" href="myBooks.html">My Sales</a></li>
+                        <li><a class="dropdown-item" href="index.html">Log out</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group d-lg-none">
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user"></i></i> My Profile
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>
+                            <span class="dropdown-item disabled "><img src="../public/images/avatar.png" alt="profile picture"
+                                                                       class="rounded-circle d-inline" width="40" height="40">
+                                <h6 class="d-inline ms-2">Hello, Name Surname!</h6>
+                            </span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="addEditBook.html">Add New Post</a></li>
+                        <li><a class="dropdown-item" href="myProfile.html">My Profile</a></li>
+                        <li><a class="dropdown-item" href="myBooks.html">My Sales</a></li>
+                        <li><a class="dropdown-item" href="index.html">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row mh-">
+            <button class="btn btn-light btn-outline-dark d-block d-sm-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="false" aria-controls="collapseExample">
+                Filters
+            </button>
+
+            <div id="filter" class="collapse col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-2 bg-light d-md-none d-lg-none d-xl-none d-xxl-none">
+                <div class="t-products mt-3 mb-2">
+                    <input type="search" class="form-control rounded" placeholder="Search" />
+                </div>
+                <div class="p-2">
+                    <div class="heading d-flex justify-content-between align-items-center">
+                        <h6 class="text-uppercase">Genres</h6>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="actionAndAdventure" name="genres"> Action & Adventure </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="classics" name="genres"> Classics </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="comicBook" name="genres"> Comic Books </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="mystery" name="genres"> Mystery </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="fantasy" name="genres"> Fantasy </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="horror" name="genres"> Horror </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="romance" name="genres"> Romance </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="thriller " name="genres"> Thriller </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="scienceFiction" name="genres"> Science Fiction </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="history" name="genres"> History </div> <span>##</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="poetry" name="genres"> Poetry </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="biographies" name="genres"> Biographies </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="childrens" name="genres"> Children’s </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="humor" name="genres"> Humor </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="artAndPhotography" name="genres"> Art & Photography </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="travel" name="genres"> Travel </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="guides" name="genres"> Guide / How-to </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="cookbooks" name="genres"> Cookbooks </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="self-help" name="genres"> Self-Help </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="parentingAndFamilies" name="genres"> Parenting & Families </div> <span>##</span>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <div class="heading d-flex justify-content-between align-items-center">
+                        <h6 class="text-uppercase">Type of ad</h6>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="selling" name="type"> Books for sale </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="renting" name="type"> Books for rental </div> <span>##</span>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <div class="heading d-flex justify-content-between align-items-center">
+                        <h6 class="text-uppercase">Order by</h6>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="radio" value="price" name="orderBy"> Cheapest </div>
+                        <div class="form-check"> <input class="form-check-input" type="radio" value="newest" name="orderBy"> Newest </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="radio" value="price" name="orderBy"> Best sellers </div>
+                        <div class="form-check"> <input class="form-check-input" type="radio" value="title" name="orderBy"> Title </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-2 bg-light d-none d-sm-none d-md-block">
+                <div class="t-products mt-3 mb-2">
+                    <input type="search" class="form-control rounded" placeholder="Search" />
+                </div>
+                <div class="p-2">
+                    <div class="heading d-flex justify-content-between align-items-center">
+                        <h6 class="text-uppercase">Genres</h6>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="actionAndAdventure" name="genres"> Action & Adventure </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="classics" name="genres"> Classics </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="comicBook" name="genres"> Comic Books </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="mystery" name="genres"> Mystery </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="fantasy" name="genres"> Fantasy </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="horror" name="genres"> Horror </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="romance" name="genres"> Romance </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="thriller " name="genres"> Thriller </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="scienceFiction" name="genres"> Science Fiction </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="history" name="genres"> History </div> <span>##</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="poetry" name="genres"> Poetry </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="biographies" name="genres"> Biographies </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="childrens" name="genres"> Children’s </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="humor" name="genres"> Humor </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="artAndPhotography" name="genres"> Art & Photography </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="travel" name="genres"> Travel </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="guides" name="genres"> Guide / How-to </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="cookbooks" name="genres"> Cookbooks </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="self-help" name="genres"> Self-Help </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="parentingAndFamilies" name="genres"> Parenting & Families </div> <span>##</span>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <div class="heading d-flex justify-content-between align-items-center">
+                        <h6 class="text-uppercase">Type of ad</h6>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="selling" name="type"> Books for sale </div> <span>##</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="renting" name="type"> Books for rental </div> <span>##</span>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <div class="heading d-flex justify-content-between align-items-center">
+                        <h6 class="text-uppercase">Order by</h6>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="radio" value="price" name="orderBy"> Cheapest </div>
+                        <div class="form-check"> <input class="form-check-input" type="radio" value="newest" name="orderBy"> Newest </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-check"> <input class="form-check-input" type="radio" value="price" name="orderBy"> Best sellers </div>
+                        <div class="form-check"> <input class="form-check-input" type="radio" value="title" name="orderBy"> Title </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-10 mt-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-4 justify-content-center h-100">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="../public/images/book.png" alt="book photo" />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">Book Name</h5>
+                                    $##.## <br />
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-light btn-outline-dark mt-auto" href="bookDetail.html">Show
+                                        more...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="../public/images/book.png" alt="book photo" />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">Book Name</h5>
+                                    $##.## <br />
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-light btn-outline-dark mt-auto" href="bookDetail.html">Show
+                                        more...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="../public/images/book.png" alt="book photo" />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">Book Name</h5>
+                                    $##.## <br />
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-light btn-outline-dark mt-auto" href="bookDetail.html">Show
+                                        more...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="../public/images/book.png" alt="book photo" />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">Book Name</h5>
+                                    $##.## <br />
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-light btn-outline-dark mt-auto" href="bookDetail.html">Show
+                                        more...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5 d-md-none d-lg-block">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="../public/images/book.png" alt="book photo" />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">Book Name</h5>
+                                    $##.## <br />
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-light btn-outline-dark mt-auto" href="bookDetail.html">Show
+                                        more...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5 d-md-none d-lg-block">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="../public/images/book.png" alt="book photo" />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">Book Name</h5>
+                                    $##.## <br />
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-light btn-outline-dark mt-auto" href="bookDetail.html">Show
+                                        more...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5 d-none d-xxl-block">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="../public/images/book.png" alt="book photo" />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">Book Name</h5>
+                                    $##.## <br />
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-light btn-outline-dark mt-auto" href="bookDetail.html">Show
+                                        more...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5 d-none d-xxl-block">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="../public/images/book.png" alt="book photo" />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">Book Name</h5>
+                                    $##.## <br />
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-light btn-outline-dark mt-auto" href="bookDetail.html">Show
+                                        more...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <nav aria-label="pagination " class="pt-2">
+                        <ul class="pagination text-secondary sticky-bottom justify-content-center">
+                            <li class="page-item active"><a class="page-link" href="#">##</a></li>
+                            <li class="page-item"><a class="page-link" href="#">##</a></li>
+                            <li class="page-item"><a class="page-link" href="#">##</a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link" href="#">##</a></li>
+                            <li class="page-item"><a class="page-link" href="#">##</a></li>
+                        </ul>
+                        <ul class="pagination text-secondary sticky-bottom justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#">&laquo; Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next &raquo;</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer starts here -->
+    <footer class="site-footer">
+        <div class="container text-white">
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <div class="border-top pt-3">
+                        <p>
+                            Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This Website is Developed by Jure, Jure, Nikolay and Uros
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- ./footer ends here -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+
+</html>

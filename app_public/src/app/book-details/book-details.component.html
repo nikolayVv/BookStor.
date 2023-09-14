@@ -1,0 +1,122 @@
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-center" style="margin-top:3%">
+        <div class="col-xl-8 col-md-11 col-sm-12 shadow-lg p-3 bg-light rounded">
+            <div class="text-left">
+                <h3>{{curentBook.title}}</h3>
+                <div *ngIf="curentBook.buy">Buy price: {{curentBook.buyPrice}} €</div>
+                <div *ngIf="curentBook.rent">Rent price: {{curentBook.rentPrice}} €</div>
+
+            </div>
+            <br>
+
+            <!-- title, author, release date, description, genre, condition, buy price, rent price, location, phone number, pictures -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-7 col-xl-7 col-xxl-7 rounded" style="background-color: rgba(255, 0, 0, 0.055); margin-right:1%;">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th scope="row">Author</th>
+                                <td>{{curentBook.author}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Release year</th>
+                                <td>{{curentBook.bookReleaseYear}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Genre</th>
+                                <td>
+                                    {{curentBook.genres}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Condition</th>
+                                <td>{{curentBook.condition}}</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <b>Description: </b><br>
+                        <div class="description">
+                            {{curentBook.description}}
+                        </div>
+                        <br>
+
+
+                        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2" *ngFor="let picture of curentBook.pictures">
+                            <div class="card" *ngIf="picture">
+                                <img src="{{picture}}" class="card-img-top" alt="book img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-11 col-sm-11 col-md-11 col-lg-4 col-xl-4 col-xxl-4 rounded" style="background-color: rgba(255, 85, 34, 0.055);">
+
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th scope="row">Seller</th>
+                                <td>{{curentBook.sellerName}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Phone</th>
+                                <td>{{curentBook.phone}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{seller.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Location</th>
+                                <td>{{curentBook.location}}</td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+
+                        <a class="btn btn-info {{!jePovezava() ? 'disabled' : ''}}" *ngIf="isLogged && !sellerBuyer" routerLink="/usersProfileView/{{curentBook.sellerId}}">Seller Profile</a>
+                        <a class="btn btn-info {{!jePovezava() ? 'disabled' : ''}}" *ngIf="isLogged && sellerBuyer" routerLink="/myProfile">Seller Profile</a>
+                        <a class="btn btn-info {{!jePovezava() ? 'disabled' : ''}}" *ngIf="!isLogged" routerLink="/login">login</a>
+
+                        <br><br><br>
+                        <table class="table">
+                            <tbody>
+                                <tr *ngIf="curentBook.buy">
+                                    <th scope="row">Buy price:</th>
+                                    <td>{{curentBook.buyPrice}}€</td>
+                                </tr>
+                                <tr *ngIf="curentBook.rent">
+                                    <th scope="row">Rent price:</th>
+                                    <td>{{curentBook.rentPrice}}€</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- BUTTONI BOJO POSLALI MAIL PRODALAJCU DA JE KNJIGA KUPLJENA/RENTANA, V BAZI BODO OZNALIČE KNJIGO KOT SOLD/RENTED -->
+
+
+                        <button *ngIf="isLogged && !sellerBuyer && curentBook.buy" (click)="kupiKnjigo()" id="buyBtn" type="button" class="btn btn-primary" style="margin-right: 5px;" [disabled]="!jePovezava()">BUY</button>
+                        <button *ngIf="isLogged && !sellerBuyer && curentBook.rent" (click)="najemiKnjigo()" id="rentBtn" type="button" class="btn btn-primary" [disabled]="!jePovezava()">RENT</button>
+                        <div *ngIf="curentBook.ethereumAddress != '' && isLogged && !sellerBuyer" class="row mt-3">
+                        <div>
+                            <input type="radio" value="ether" (click)="changeWayOfPaying($event)" name="wayOfPaying"> Pay in Ether (1€ = 0.00037 ETH)
+                          </div>
+                          <div>
+                            <input type="radio" value="euro" (click)="changeWayOfPaying($event)" name="wayOfPaying" checked> Pay in Euro
+                          </div>
+                        </div>
+
+                        <!-- <button type="button" class="btn btn-success">RENT</button> -->
+                        <input type="text" name="sellerEmail" id="sellerEmail" value="" hidden>
+                        <input type="text" name="sellerName" id="sellerName" value="" hidden>
+                        <input type="text" name="buyerName" id="buyerName" value="" hidden>
+                        <input type="text" name="bookTitle" id="bookTitle" value="" hidden>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+{
+    "name": "BookStor.",
+    "version": "2.2.3",
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www",
+        "books-post": "docker cp app_api/models/test-data-books.json bookstor-fri-mongodb:/test-data-books.json; docker exec -it bookstor-fri-mongodb mongoimport --db BookStor --collection Books --mode upsert --upsertFields title --jsonArray --file test-data-books.json; docker exec -it bookstor-fri-mongodb rm -rf test-data-books.json",
+        "users-post": "docker cp app_api/models/test-data-users.json bookstor-fri-mongodb:/test-data-users.json; docker exec -it bookstor-fri-mongodb mongoimport --db BookStor --collection Users --mode upsert --upsertFields name --jsonArray --file test-data-users.json; docker exec -it bookstor-fri-mongodb rm -rf test-data-users.json; docker exec -it bookstor-fri-mongodb bash -c \\\\\\\"mongosh BookStor --eval 'db.Users.find().forEach(function(dokument) { for (var i = 0; i < dokument.alreadyRanked.length; i++) { dokument.alreadyRanked[i]._id = ObjectId() } db.Users.replaceOne({ \\\\\\\"_id\\\\\\\" : dokument._id }, dokument) })'\\\\\\\"; docker exec -it bookstor-fri-mongodb bash -c \\\\\\\\\\\\\\\"mongosh BookStor --eval 'db.Users.find().forEach(function(dokument) { for (var i = 0; i < dokument.comments.length; i++) { dokument.comments[i]._id = ObjectId() } db.Users.replaceOne({ \\\\\\\\\\\\\\\"_id\\\\\\\\\\\\\\\" : dokument._id }, dokument) })'\\\\\\\\\\\\\\\"; docker exec -it bookstor-fri-mongodb bash -c \\\\\\\\\\\\\\\"mongosh BookStor --eval 'db.Users.find().forEach(function(dokument) { for (var i = 0; i < dokument.myBooks.length; i++) { dokument.myBooks[i]._id = ObjectId() } db.Users.replaceOne({ \\\\\\\\\\\\\\\"_id\\\\\\\\\\\\\\\" : dokument._id }, dokument) })'\\\\\\\\\\\\\\\"",
+        "books-delete": "docker exec -it bookstor-fri-mongodb bash -c \"mongosh BookStor --eval 'db.Books.deleteMany({})'\"",
+        "users-delete": "docker exec -it bookstor-fri-mongodb bash -c \"mongosh BookStor --eval 'db.Users.deleteMany({})'\"",
+        "books-export-production": "docker exec -it bookstor-fri-mongodb bash -c \"mongodump -h localhost -d BookStor -o ./\"; docker exec -it bookstor-fri-mongodb bash -c \"mongorestore --drop --uri mongodb+srv://app:Bo0kStoRd4tABas3@bookstordb.lj2u3.mongodb.net ./BookStor/Books.bson\"; docker exec -it bookstor-fri-mongodb bash -c \"rm -rf ./BookStor\"",
+        "users-export-production": "docker exec -it bookstor-fri-mongodb bash -c \"mongodump -h localhost -d BookStor -o ./\"; docker exec -it bookstor-fri-mongodb bash -c \"mongorestore --drop --uri mongodb+srv://app:Bo0kStoRd4tABas3@bookstordb.lj2u3.mongodb.net ./BookStor/Users.bson\"; docker exec -it bookstor-fri-mongodb bash -c \"rm -rf ./BookStor\"",
+        "test": "mocha test --bail --reporter mochawesome --reporter-options autoOpen=true,reportDir=test/porocilo,reportFilename=porocilo,json=false"
+    },
+    "engines": {
+        "node": ">=14.15.5",
+        "npm": ">=6.14.11"
+    },
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.4.1",
+        "@truffle/contract": "^4.4.2",
+        "@truffle/hdwallet-provider": "^2.0.0",
+        "axios": "*",
+        "bootstrap-star-rating": "*",
+        "chart.js": "^3.7.0",
+        "cookie-parser": "*",
+        "debug": "*",
+        "dotenv": "^10.0.0",
+        "express": "*",
+        "express-jwt": "^6.1.0",
+        "firebase": "*",
+        "fs": "*",
+        "hbs": "*",
+        "heroku": "^7.59.2",
+        "http-errors": "*",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "*",
+        "morgan": "*",
+        "ng": "0.0.0",
+        "ng2-charts": "^3.0.6",
+        "passport": "^0.5.2",
+        "passport-local": "^1.0.0",
+        "swagger-jsdoc": "^6.1.0",
+        "swagger-ui-express": "^4.3.0"
+    },
+    "main": "./bin/www",
+    "devDependencies": {
+        "chai": "^4.3.4",
+        "chromedriver": "^96.0.0",
+        "mocha": "^9.1.3",
+        "mochawesome": "^7.0.1",
+        "selenium-webdriver": "^4.1.0"
+    }
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BookStor.</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="../images/miniicon%20-%20light.png">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <!--    PROFILE BUTTON ICON-->
+    <!--    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
+
+    <meta name="keywords" content="SP, SPA, Node.js, JavaScript, HTML, CSS,
+      Heroku, Cloud9, GitHub, Pug, Express, MongoDB, books, store, stor, sell, buy, rent, search, book, bookss" />
+    <meta name="description" content="Bookstor. Sell, buy, rent books, search books and view their contents online" />
+    <meta name="title" content="Bookstor">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+</head>
+
+<body class="background-wawy">
+    <!-- navbar shit -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="d-none d-lg-block">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="../public/images/longlogo.png" alt="img missing" height="40" class="d-inline-block align-text-top">
+                        </a>
+                    </li>
+                    <li class="d-lg-none">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="searchContentsView.html" role="button" aria-expanded="false">
+                            Contents
+                        </a>
+                    </li>
+                </ul>
+                <!--            LOGIN BUTTON-->
+                <button class="btn btn-outline-success" onclick="location.href='login.html'">Login</button>
+                <!--            PROFILE BUTTON-->
+                <!--            <div class="btn-group dropstart d-none d-lg-block">-->
+                <!--                <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown" aria-expanded="false">-->
+                <!--                    <i class="fa fa-user"></i> My Profile-->
+                <!--                </button>-->
+
+                <!--                <ul class="dropdown-menu dropdown-menu-dark">-->
+                <!--                    <li>-->
+                <!--                        <span class="dropdown-item disabled"><img src="images/avatar.png" alt="profile picture" class="rounded-circle d-inline" width="40" height="40"><h6 class="d-inline ms-2">Hello, Name Surname!</h6></span>-->
+                <!--                    </li>-->
+                <!--                    <li><hr class="dropdown-divider"></li>-->
+                <!--                    <li><a class="dropdown-item" href="#">My Profile</a></li>-->
+                <!--                    <li><a class="dropdown-item" href="#">My Sales</a></li>-->
+                <!--                    <li><a class="dropdown-item" href="index.html">Log out</a></li>-->
+                <!--                </ul>-->
+                <!--            </div>-->
+                <!--            <div class="btn-group d-lg-none">-->
+                <!--                <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown" aria-expanded="false">-->
+                <!--                    <i class="fa fa-user"></i></i> My Profile-->
+                <!--                </button>-->
+
+                <!--                <ul class="dropdown-menu dropdown-menu-dark">-->
+                <!--                    <li>-->
+                <!--                        <span class="dropdown-item disabled"><img src="images/avatar.png" alt="profile picture" class="rounded-circle d-inline" width="40" height="40"><h6 class="d-inline ms-2">Hello, Name Surname!</h6></span>-->
+                <!--                    </li>-->
+                <!--                    <li><hr class="dropdown-divider"></li>-->
+                <!--                    <li><a class="dropdown-item" href="#">My Profile</a></li>-->
+                <!--                    <li><a class="dropdown-item" href="#">My Sales</a></li>-->
+                <!--                    <li><a class="dropdown-item" href="index.html">Log out</a></li>-->
+                <!--                </ul>-->
+                <!--            </div>-->
+            </div>
+        </div>
+    </nav>
+    <!-- main disposition of homepage body goes here -->
+    <!--    -   corousel [go to different masks or different positions on the page; login/register, search bar + browse books, about the team, contact], the idea, about the team, content + view more -->
+
+    <!-- carousel with interactive content -->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="8000">
+                <div class="overlay-image" style="background-image: url(../public/images/homepage_pics/1.jpg);"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="mx-auto d-block overlay-content" src="../images/main_page_logo-light%20-%20Copy.png">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- container for search box -->
+                            <div class="container pt-5 overlay-content">
+                                <div class="row text-center text-white" id="searchBox">
+                                    <h1>Search books, genre or authors</h1>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="search justify-content-center"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="e.g. Stan Lee">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 pt-3 text-center">
+                                        <button class="btn btn-warning">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ./container for search box -->
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div> -->
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <div class="overlay-image" style="background-image: url(../public/images/homepage_pics/2.jpg);"></div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <div class="overlay-image" style="background-image: url(../public/images/homepage_pics/3.jpg);"></div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- carousel over -->
+
+    <!-- search bar row -->
+    <!-- <div class="row text-white search-form-overlay w-100">
+        <div class="offset-md-1 col-md-10 offset-lg-2 col-lg-9 offset-xl-3 col-xl-7">
+            <h2 class="h1 mb-4">Search for books, genre, authors etc.</h2>
+        </div>
+        <div class="offset-md-1 col-md-10 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+            <form action="/searches" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden"
+                    value="✓"><input type="hidden" name="authenticity_token"
+                    value="b3IqZVBectnMFLqaOfOVbtD3HOdNkTabnwDwvoqqwjUABpdKgKUROM77tEIzSgyTyaR8fQXogZx8NUmIUUNthw==">
+
+                <div class="form-row">
+                    <div class="form-group col-md-8 pr-4">
+                        <label class="sr-only">Keyword</label>
+                        <input id="report_keyword" class="form-control form-control-lg form-control-branded"
+                            placeholder="e.g. Mein Kampf" ariadescribedby="search-help-text" type="text"
+                            name="search[keyword]">
+
+                        <small id="search-help-text" class="form-text text-white opacity-6 mt-2">
+                            <span class="d-block d-lg-none">
+                                Enter a book name, author or genre. Use 1-2 words for best results
+                            </span>
+                            <span class="d-none d-lg-block">
+                                Enter a book name, author or genre <span class="ml-4"></span>Use 1-2 words for best
+                                results
+                            </span>
+                        </small>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> -->
+
+    <!-- big container for all content -->
+    <div class="container bg-dark rounded">
+
+        <div class="container container-homepage">
+            <div class="row text-center text-white" id="theIdea">
+                <h1>The Idea</h1>
+            </div>
+            <div class="row  whiteboard rounded">
+                What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+
+        <!-- container for about team-->
+        <div class="container container-hompage">
+            <div class="row text-center text-white" id="ourTeam">
+                <h1>Our Team</h1>
+            </div>
+            <!-- four columns for each member of the team -->
+            <div class="row row-cols-xs-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 whiteboard rounded">
+                <div class="col-12">
+                    <img class="rounded-circle img-fluid" src="../public/images/about_team_content/Avatar_Jure_Čufer.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Jure Čufer</h2>
+                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-12">
+                    <img class="rounded-circle img-fluid" src="../public/images/about_team_content/harambo.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Nikolay Vasilev</h2>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-12">
+                    <img class="rounded-circle img-fluid" src="../public/images/about_team_content/monkeUiUi.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Uroš Pavlin</h2>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                        amet risus.</p>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-12">
+                    <img class="rounded-circle img-fluid" src="../public/images/about_team_content/uuuuh.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Jure Kos</h2>
+                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                </div>
+            </div>
+        </div>
+        <!-- ./container about team over -->
+
+        <!-- container with featurettes of books popural this month -->
+        <div class="container container-hompage">
+            <div class="row text-center text-white" id="popularBooks">
+                <h1>Most popular this month</h1>
+            </div>
+            <hr class="featurette-divider">
+
+            <div class="row featurette whiteboard rounded">
+                <div class="col-md-7">
+                    <h2 id="book1" class="featurette-heading">First book heading <span id="author1" class="text-muted">First book author</span></h2>
+                    <p id="bookDesc1" class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5">
+                    <img id="bookOfTheMonth2" class="featurette-image img-fluid mx-auto" alt="bookOfTheMonth1" src="../public/images/random/bookOfTheMonth1.png" data-holder-rendered="true">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette whiteboard rounded">
+                <div class="col-md-7 order-md-2">
+                    <h2 id="book2" class="featurette-heading">Second book heading <span id="author2" class="text-muted">Second book author</span></h2>
+                    <p id="bookDesc2" class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img id="bookOfTheMonth2" class="featurette-image img-fluid mx-auto" alt="bookOfTheMonth2" src="../public/images/random/bookOfTheMonth2.png" data-holder-rendered="true">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette whiteboard rounded">
+                <div class="col-md-7">
+                    <h2 id="book3" class="featurette-heading">Third book heading <span id="author3" class="text-muted">Third book author</span></h2>
+                    <p id="bookDesc3" class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-5">
+                    <img id="bookOfTheMonth3" class="featurette-image img-fluid mx-auto" alt="bookOfTheMonth3" src="../public/images/random/bookOfTheMonth3.png" data-holder-rendered="true">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+
+        </div>
+        <!-- ./container with featurettes over -->
+    </div>
+
+    <!-- footer starts here -->
+    <footer class="site-footer">
+        <div class="container text-white">
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col ml-auto">
+                            <h2 class="footer-heading mb-4">About Us</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eveniet, odio aspernatur aperiam quis nostrum consequuntur vitae omnis unde? Vero porro adipisci, natus ex mollitia quia. Fugiat non facilis suscipit.</p>
+                        </div>
+                        <div class="col ml-auto">
+                            <h2 class="footer-heading mb-4">Quick Links</h2>
+                            <ul class="list-unstyled">
+                                <li><a href="#ourTeam" class="smoothscroll">Our Team</a></li>
+                                <li><a href="#theIdea" class="smoothscroll">Our Vision</a></li>
+                                <li><a href="searchContentsView.html" class="smoothscroll">Search content</a></li>
+                                <li><a href="#popularBooks" class="smoothscroll">Popular books</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+                    <form action="#" method="post" class="footer-subscribe">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary text-black" type="button" id="button-addon2">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <div class="border-top pt-3">
+                        <p>
+                            Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This Website is Developed by Jure, Jure, Nikolay and Uros
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- ./footer ends here -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+
+</html>
