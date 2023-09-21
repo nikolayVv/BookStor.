@@ -28,6 +28,7 @@ export class DbComponent implements OnInit {
   }
 
   loadData() {
+    console.log("Test");
     this.bookstorDataService
       .getAllUsers()
       .subscribe((users) => {

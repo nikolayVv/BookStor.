@@ -19,7 +19,7 @@
     
     // URL naslov aplikacije, ki jo želimo testirati
     //let aplikacijaUrl = "http://localhost:4200"; 
-    let aplikacijaUrl = "https://bookstor-fri.herokuapp.com/";
+    let aplikacijaUrl = "https://bookstor-6e9e66d864cd.herokuapp.com/";
     
     // URL naslov Selenium strežnika. V primeru, da uporabljamo Docker v OS Windows 10 je potrebno URL posodobiti iz localhost na dodeljen IP.
     let seleniumStreznikUrl = "http://localhost:4445/wd/hub";

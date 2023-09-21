@@ -4,7 +4,7 @@ var apiParams = {
     server: "http://localhost:" + (process.env.PORT || 3000),
 };
 if (process.env.NODE_ENV === "production") {
-    apiParams.server = "https://bookstor-fri.herokuapp.com/";
+    apiParams.server = "https://bookstor-6e9e66d864cd.herokuapp.com/";
 }
 
 const axios = require("axios").create({

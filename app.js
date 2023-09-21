@@ -24,7 +24,7 @@ var swaggerOptions = {
     },
     servers: [
       { url: "http://localhost:3000/api" },
-      { url: "https://bookstor-fri.herokuapp.com/api" }
+      { url: "https://bookstor-6e9e66d864cd.herokuapp.com/api" }
     ]
   },
   apis: [
