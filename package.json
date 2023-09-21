@@ -34,7 +34,7 @@
         "heroku": "^7.59.2",
         "http-errors": "*",
         "jsonwebtoken": "^8.5.1",
-        "mongoose": "*",
+        "mongoose": "^6.10.0",
         "morgan": "*",
         "ng": "0.0.0",
         "ng2-charts": "^3.0.6",
